@@ -13,9 +13,9 @@ spring:
 # = Mysql configurations
 # ===============================
   datasource:
-    url: jdbc:mysql://mysqldb/bootdb?useUnicode=true&characterEncoding=UTF8&useSSL=false
-    username: root
-    password: root
+    url: jdbc:mysql://${DB_HOST}/${DB_NAME}?useUnicode=true&characterEncoding=UTF8&useSSL=false
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
 
 # ===============================
 # = Redis configurations

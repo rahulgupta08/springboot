@@ -1,0 +1,15 @@
+# Define 'Service' to expose backend application deployment
+apiVersion: v1
+kind: Service
+metadata:
+  name: to-do-app-backend  
+spec:
+  selector:  # backend application pod lables should match these
+    app: to-do-app
+    tier: backend
+  ports:
+  - protocol: "TCP"
+    port: 80
+    targetPort: 8080
+  type: LoadBalancer   # use NodePort, if you are not running Kubernetes on cloud
+---
